@@ -1,0 +1,21 @@
+# kind-nginx.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: "ingress-ready=true"
+  extraPortMappings:
+  - containerPort: 80    # tráfego que chega no container do nó
+    hostPort: 80         # porta do seu host -> http://localhost
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443        # https://localhost
+    protocol: TCP
+- role: worker
+- role: worker
+- role: worker
