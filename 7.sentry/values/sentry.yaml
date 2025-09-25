@@ -23,14 +23,14 @@ ingress:
   enabled: true
   ingressClassName: nginx
   hosts:
-    - host: sentry.apps.127.0.0.1.sslip.io
+    - host: sentry.127.0.0.1.nip.io
       paths:
         - path: /
           pathType: Prefix
   tls:
     - secretName: https-certs
       hosts:
-        - sentry.apps.127.0.0.1.sslip.io
+        - sentry.127.0.0.1.nip.io
 
 
 # Para ambiente local, reduzir réplicas ajuda a subir rápido
