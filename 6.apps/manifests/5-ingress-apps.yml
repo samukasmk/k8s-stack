@@ -13,11 +13,11 @@ spec:
 
   tls:
   - hosts:
-      - app.127.0.0.1.nip.io
+      - apps.127.0.0.1.nip.io
     secretName: https-certs
 
   rules:
-  - host: app.127.0.0.1.nip.io
+  - host: apps.127.0.0.1.nip.io
 
     http:
       paths:

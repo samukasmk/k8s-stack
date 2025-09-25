@@ -1,29 +1,30 @@
 echo "=========================================================================="
 echo "testing: app-demo"
 echo '--------------------------------------------------------------------------'
-echo "# curl localhost/"
+echo "# curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/"
 echo "=========================================================================="
 
-curl localhost/
+curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/
+
 
 echo
 echo
 echo "=========================================================================="
 echo "testing: app-foo"
 echo '--------------------------------------------------------------------------'
-echo "# curl localhost/foo"
+echo "# curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/foo"
 echo "=========================================================================="
 
-curl localhost/foo
+curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/foo
 
 echo
 echo
 echo "=========================================================================="
 echo "testing: app-bar"
 echo '--------------------------------------------------------------------------'
-echo "# curl localhost/bar"
+echo "# curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/bar"
 echo "=========================================================================="
 
-curl localhost/bar
+curl -ik -H 'Host: apps.127.0.0.1.nip.io' https://localhost/bar
 
 

@@ -1,0 +1,20 @@
+controller:
+  kind: DaemonSet
+  hostPort:
+    enabled: true
+
+  # MUITO IMPORTANTE: string "true" (não boolean)
+  nodeSelector:
+    ingress-ready: "true"
+
+  # Para agendar no control-plane (tem taint)
+  tolerations:
+    - key: node-role.kubernetes.io/control-plane
+      operator: Exists
+      effect: NoSchedule
+    - key: node-role.kubernetes.io/master
+      operator: Exists
+      effect: NoSchedule
+
+defaultBackend:
+  enabled: true

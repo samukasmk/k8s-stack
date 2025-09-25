@@ -6,6 +6,7 @@ echo "==========================================================================
 
 mkcert || sudo apt update && sudo apt install -y mkcert
 
+
 echo
 echo
 echo "=========================================================================="
@@ -14,37 +15,33 @@ echo "==========================================================================
 
 mkdir -p ./certs
 
+
 echo
 echo
 echo "=========================================================================="
 echo "# mkcert -cert-file ./certs/tls.crt \\"
 echo "    -key-file ./certs/tls.key \\"
-echo "    '127.0.0.1' \\"
-echo "    '1::' \\"
-echo "    'localhost' \\"
-echo "    '*.localhost' \\"
-echo "    '*.local' \\"
-echo "    '127-0-0-1.nip.io' \\"
-echo "    '127.0.0.1.nip.io' \\"
-echo "    '*.127-0-0-1.nip.io' \\"
-echo "    '*.127.0.0.1.nip.io' \\"
-echo "    '*.apps.127-0-0-1.nip.io' \\"
-echo "    '*.apps.127.0.0.1.nip.io'"
+echo "    '127.0.0.1' '1::' 'localhost' \\"
+echo "    '*.localhost' '*.local' \\"
+echo "    '127-0-0-1.nip.io' '127.0.0.1.nip.io' \\"
+echo "    '*.127-0-0-1.nip.io' '*.127.0.0.1.nip.io' \\"
+echo "    '*.apps.127-0-0-1.nip.io' '*.apps.127.0.0.1.nip.io' \\"
+echo "    '127-0-0-1.sslip.io' '127.0.0.1.sslip.io' \\"
+echo "    '*.127-0-0-1.sslip.io' '*.127.0.0.1.sslip.io' \\"
+echo "    '*.apps.127-0-0-1.sslip.io' '*.apps.127.0.0.1.sslip.io'"
 echo "=========================================================================="
 
 mkcert -cert-file ./certs/tls.crt \
     -key-file ./certs/tls.key \
-    '127.0.0.1' \
-    '1::' \
-    'localhost' \
-    '*.localhost' \
-    '*.local' \
-    '127-0-0-1.nip.io' \
-    '127.0.0.1.nip.io' \
-    '*.127-0-0-1.nip.io' \
-    '*.127.0.0.1.nip.io' \
-    '*.apps.127-0-0-1.nip.io' \
-    '*.apps.127.0.0.1.nip.io'
+    '127.0.0.1' '1::' 'localhost' \
+    '*.localhost' '*.local' \
+    '127-0-0-1.nip.io' '127.0.0.1.nip.io' \
+    '*.127-0-0-1.nip.io' '*.127.0.0.1.nip.io' \
+    '*.apps.127-0-0-1.nip.io' '*.apps.127.0.0.1.nip.io' \
+    '127-0-0-1.sslip.io' '127.0.0.1.sslip.io' \
+    '*.127-0-0-1.sslip.io' '*.127.0.0.1.sslip.io' \
+    '*.apps.127-0-0-1.sslip.io' '*.apps.127.0.0.1.sslip.io'
+
 
 echo
 echo
