@@ -23,15 +23,10 @@ echo "  --set controller.admissionWebhooks.patch.enabled=true \\"
 echo "  --set-string controller.nodeSelector.ingress-ready=true \\"
 echo "  -f ./values/ingress-nginx.yaml"
 echo '=========================================================================='
-helm install ingress-nginx ingress-nginx/ingress-nginx \
+helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
   --namespace ingress-nginx --create-namespace \
-  --set defaultBackend.enabled=true \
-  --set controller.kind=DaemonSet \
-  --set controller.hostPort.enabled=true \
-  --set controller.admissionWebhooks.enabled=true \
-  --set controller.admissionWebhooks.patch.enabled=true \
-  --set-string controller.nodeSelector.ingress-ready=true \
   -f ./values/ingress-nginx.yaml
+
 
 # rotula TODOS os nodes do cluster com ingress-ready=true
 echo
