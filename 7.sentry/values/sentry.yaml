@@ -21,23 +21,16 @@ redis:
 # Ingress
 ingress:
   enabled: true
-  # garanta que a classe é 'nginx'; se seu cluster tiver outra, ajuste
   ingressClassName: nginx
   hosts:
     - host: sentry.app.127.0.0.1.sslip.io
       paths:
         - path: /
           pathType: Prefix
-
-  # --- OPÇÃO 1: com TLS (comente a linha acima e descomente abaixo
-  # após criar o secret 'sentry-tls' com mkcert) ---
   tls:
-    - secretName: sentry-tls
+    - secretName: https-certs
       hosts:
         - sentry.app.127.0.0.1.sslip.io
-
-  # --- OPÇÃO 2: sem TLS (HTTP) ---
-  # tls: []
 
 
 # Para ambiente local, reduzir réplicas ajuda a subir rápido
@@ -52,4 +45,3 @@ sentry:
 
 # Snuba / Kafka / ClickHouse também são provisionados pelo chart.
 # Para dev local, as configs padrão costumam bastar.
-# YAML
