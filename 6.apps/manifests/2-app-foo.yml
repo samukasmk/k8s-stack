@@ -2,7 +2,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: foo-app
-  namespace: apps
+  #namespace: apps
   labels:
     app: foo
 spec:
@@ -20,7 +20,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: foo-service
-  namespace: apps
+  #namespace: apps
 spec:
   selector:
     app: foo

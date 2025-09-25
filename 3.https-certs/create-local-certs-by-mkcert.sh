@@ -28,8 +28,8 @@ echo "    '127-0-0-1.nip.io' \\"
 echo "    '127.0.0.1.nip.io' \\"
 echo "    '*.127-0-0-1.nip.io' \\"
 echo "    '*.127.0.0.1.nip.io' \\"
-echo "    '*.app.127-0-0-1.nip.io' \\"
-echo "    '*.app.127.0.0.1.nip.io'"
+echo "    '*.apps.127-0-0-1.nip.io' \\"
+echo "    '*.apps.127.0.0.1.nip.io'"
 echo "=========================================================================="
 
 mkcert -cert-file ./certs/tls.crt \
@@ -43,8 +43,8 @@ mkcert -cert-file ./certs/tls.crt \
     '127.0.0.1.nip.io' \
     '*.127-0-0-1.nip.io' \
     '*.127.0.0.1.nip.io' \
-    '*.app.127-0-0-1.nip.io' \
-    '*.app.127.0.0.1.nip.io'
+    '*.apps.127-0-0-1.nip.io' \
+    '*.apps.127.0.0.1.nip.io'
 
 echo
 echo

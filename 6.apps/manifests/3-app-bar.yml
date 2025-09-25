@@ -2,7 +2,7 @@ kind: ReplicaSet
 apiVersion: apps/v1
 metadata:
   name: bar-app
-  namespace: apps
+  #namespace: apps
   labels:
     app: bar
 spec:
@@ -22,7 +22,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: bar-service
-  namespace: apps
+  #namespace: apps
 spec:
   selector:
     app: bar
