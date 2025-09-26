@@ -34,7 +34,7 @@ echo "==========================================================================
 mkcert -cert-file ./certs/tls.crt \
     -key-file ./certs/tls.key \
     '127.0.0.1' '1::' 'localhost' \
-    '*.localhost' '*.local' \
+    '*.localhost' '*.local' '*.docker.internal' \
     '127-0-0-1.nip.io' '127.0.0.1.nip.io' \
     '*.127-0-0-1.nip.io' '*.127.0.0.1.nip.io' \
     '*.apps.127-0-0-1.nip.io' '*.apps.127.0.0.1.nip.io' \
