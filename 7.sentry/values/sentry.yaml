@@ -42,6 +42,45 @@ sentry:
   cron:
     replicaCount: 1
 
+# Sentry settings
+config:
+  sentryConfPy: |
+    # Liga profiling no backend
+    SENTRY_USE_PROFILING = True
 
-# Snuba / Kafka / ClickHouse também são provisionados pelo chart.
-# Para dev local, as configs padrão costumam bastar.
+    # Garante que a UI habilite os painéis de performance/profiling
+    SENTRY_FEATURES.update({
+        "organizations:performance-view": True,
+        "organizations:profiling": True,
+        "organizations:profiling-view": True,
+        "organizations:metrics": True,
+        "organizations:performance-issues": True,
+        "organizations:monitors": True,
+    })
+  configYml:
+    system.url-prefix: "http://sentry.127.0.0.1.nip.io"
+    maxRequestBodySize: 2000000
+    maxResponseBodySize: 2000000
+  snubaSettingsPy: |
+    # No Python Extension Config Given
+  relay: |
+    # No YAML relay config given
+  web:
+    httpKeepalive: 15
+    httpChunkedInput: true
+    workers: 3
+    memoryReport: false
+    maxRequests: 100000
+    maxRequestsDelta: 500
+    maxWorkerLifetime: 86400
+    thunderLock: true
+    logXForwardedFor: false
+    bufferSize: 32768
+    limitPost: 209715200
+    disableLogging: true
+    reloadOnRss: 600
+    ignoreSignpipe: true
+    ignoreWriteErrors: true
+    disableWriteException: true
+
+
