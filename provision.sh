@@ -1,8 +1,11 @@
 #!/bin/bash
 #
 
+# ask to sudo password in the beginning
+sudo echo "Starting at: $(date)"
+
 pushd 1.cluster
-bash create-cluster.sh sentry
+bash create-cluster.sh smk
 popd
 
 pushd 2.ingress
