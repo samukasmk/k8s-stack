@@ -27,6 +27,10 @@ popd
 # bash test-by-localhost.sh
 # popd
 
-pushd 7.sentry
-bash install-sentry.sh
+# pushd 7.sentry
+# bash install-sentry.sh
+# popd
+
+pushd 9.jitsi
+bash install-jitsi.sh
 popd

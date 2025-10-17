@@ -1,0 +1,1 @@
+helm upgrade myjitsi jitsi/jitsi-meet -f ./values.yaml --install
