@@ -50,7 +50,16 @@ config:
 
     # Garante que a UI habilite os painéis de performance/profiling
     SENTRY_FEATURES.update({
+        "profiling": True,
+        "organizations:performance-view": True,
+        "organizations:profiling": True,
+        "organizations:profiling-view": True,
+
         "organizations:discover": True,
+        "organizations:discover-basic": True,
+        "organizations:discover-query": True,
+
+
         "organizations:events": True,
         "organizations:global-views": True,
         "organizations:incidents": True,
@@ -61,12 +70,11 @@ config:
         "organizations:sso-basic": True,
         "organizations:sso-rippling": True,
         "organizations:sso-saml2": True,
-        "organizations:performance-view": True,
+
         "organizations:advanced-search": True,
         "organizations:session-replay": True,
         "organizations:issue-platform": True,
-        "organizations:profiling": True,
-        "organizations:profiling-view": True,
+
         "organizations:metrics": True,
         "organizations:performance-issues": True,
         "organizations:monitors": True,
