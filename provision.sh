@@ -27,6 +27,10 @@ popd
 #bash install-sentry.sh
 #popd
 
-# pushd 9.jitsi
-# bash install-jitsi.sh
-# popd
+#pushd 9.jitsi
+#bash install-jitsi.sh
+#popd
+
+#pushd 10.kafka
+#bash create-kafka-cluster.sh
+#popd
