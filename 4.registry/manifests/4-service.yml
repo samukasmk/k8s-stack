@@ -4,9 +4,10 @@ metadata:
   name: docker-registry
   namespace: tools
 spec:
+  type: ClusterIP
   selector:
     app: docker-registry
   ports:
-  - name: http
-    port: 5000
-    targetPort: 5000
+    - name: http
+      port: 5000
+      targetPort: 5000

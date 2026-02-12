@@ -4,6 +4,10 @@
 # ask to sudo password in the beginning
 sudo echo "Starting at: $(date)"
 
+# pushd 0.docker
+# bash configure-docker-kind.sh
+# popd
+
 pushd 1.cluster
 bash create-cluster.sh smk
 popd
@@ -16,12 +20,16 @@ pushd 3.https-certs
 bash create-local-certs-by-mkcert.sh
 popd
 
-pushd 6.apps
-bash create-apps.sh
-sleep 10
-bash test-by-domain.sh
-bash test-by-localhost.sh
+pushd 4.registry
+bash docker-registry.sh
 popd
+
+# pushd 6.apps
+# bash create-apps.sh
+# sleep 10
+# bash test-by-domain.sh
+# bash test-by-localhost.sh
+# popd
 
 #pushd 7.sentry
 #bash install-sentry.sh

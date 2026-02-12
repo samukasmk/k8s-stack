@@ -1,0 +1,25 @@
+# -*- mode: Python -*
+
+default_registry(
+    "registry.tools.127.0.0.1.nip.io"
+)
+
+k8s_yaml('kubernetes.yaml')
+
+k8s_resource('example-python', port_forwards=8000)
+
+docker_build(
+    'example-python-image',
+    '.',
+    # dockerfile="Dockerfile",
+    build_args={'flask_debug': 'True'},
+    live_update=[
+        sync('.', '/app'),
+])
+
+local_resource(
+  "restart-example-python",
+  cmd="kubectl rollout restart deploy/example-python",
+  deps=["."],  # watch folders to restart the deployment when files change
+  auto_init=False
+)
